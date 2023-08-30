@@ -1,25 +1,35 @@
-import logo from './logo.svg';
-import './App.css';
+import { useState } from "react";
+import InformacaoAluno from "./componente/InformacaoAluno";
+import alunos from './dados'; //Coleção de dados
 
-function App() {
+const Dashboard = () => {
+  const [mostrarComponente, setMostrarComponente] = useState(false);
+  const [alunoSelecionado, setAlunoSelecionado] = useState(null);
+
+  const abrirInformacaoAluno = (aluno) => {
+    setMostrarComponente(true);
+    setAlunoSelecionado(aluno);
+  };
+
+  const fecharInformacaoAluno = () => {
+    setMostrarComponente(false);
+    setAlunoSelecionado(null);
+  };
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <h1>Lista de Alunos</h1>
+      <ul>
+        {alunos.map((aluno) => (
+          <li key={aluno.matricula}>
+            {aluno.nome}
+            <button onClick={abrirInformacaoAluno}> +</button>
+          </li>
+        ))}
+      </ul>
+      {mostrarComponente && < InformacaoAluno aluno={alunoSelecionado} fecharInformacaoAluno={fecharInformacaoAluno} />}
     </div>
   );
-}
+};
 
-export default App;
+export default Dashboard;

@@ -18,12 +18,12 @@ const Dashboard = () => {
 
   return (
     <div>
-      <h1>Lista de Alunos</h1>
+      <h1>Lista de Funcionários</h1>
       <ul>
         {alunos.map((aluno) => (
           <li key={aluno.matricula}>
             {aluno.nome}
-            <button onClick={abrirInformacaoAluno}> +</button>
+            <button onClick={() => abrirInformacaoAluno(aluno)}>+</button>
           </li>
         ))}
       </ul>

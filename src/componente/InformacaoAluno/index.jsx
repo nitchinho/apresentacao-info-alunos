@@ -11,7 +11,7 @@ const InformacaoAluno = ({aluno,fecharInformacaoAluno}) => {
         <p>Idade: {aluno.idade}</p>
         <p>Setor: {aluno.serie}</p>
         <p>Carga Horária: {aluno.turma}</p>
-        <button onClick={() => fecharInformacaoAluno()}>fechar</button>
+        <button onClick={fecharInformacaoAluno}>fechar</button>
       </div>
     </div>
   );

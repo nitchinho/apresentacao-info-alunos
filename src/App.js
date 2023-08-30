@@ -33,3 +33,40 @@ const Dashboard = () => {
 };
 
 export default Dashboard;
+
+// import React from "react";
+// import { useState } from "react";
+
+// export default function App() {
+//   const [contador, setContador] = useState(0);
+
+//   const incrementar = () => {
+//     setContador(contador+1);
+//   };
+
+//   const decrementar = () => {
+//     contador > 0 && setContador(contador-1);
+//   };
+
+//   return (
+//     <div>
+//       <p>{contador}</p>
+//       <button onClick={incrementar}>+</button>
+//       <button onClick={decrementar}>-</button>
+//     </div>
+//   );
+// }
+
+// const itens = [
+//   { nome: 'Pré som', valor: 800 },
+//   { nome: 'Conta-giros', valor: 500 },
+//   { nome: 'Desembaçador traseiro', valor: 1000 },
+//   { nome: 'Ar quente', valor: 1800 },
+// ];
+
+// const itensBaratos = itens.filter( (item) => item.valor < 1000 && itensBaratos );
+// itensBaratos.forEach( ( item ) => {
+//      console.log( item.nome + ' - ' + item.valor );
+// });
+
+// console.log(itensBaratos)
